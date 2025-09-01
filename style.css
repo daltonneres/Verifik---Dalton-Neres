@@ -128,8 +128,7 @@ nav a {
   text-align: center;
   font-size: 28px;
   margin-bottom: 20px;
-  color: #4DF6F9;
-  /* título com ciano */
+  color: #121212; /* título com ciano */
   font-weight: 700;
 }
 
@@ -513,13 +512,11 @@ footer {
 /* ===== Empresa / Institucional ===== */
 
 .empresa-container h1 .azul {
-  color: #4DF6F9;
-  /* ciano */
+  color: #121212;
 }
 
 .empresa-container h1 .verde {
-  color: #4DF6F9;
-  /* verde-água */
+  color: #121212;
 }
 
 .empresa-container p {
@@ -536,13 +533,6 @@ footer {
   .empresa-container p {
     font-size: 1rem;
   }
-}
-
-.mapa-img {
-  display: block;
-  margin: 40px auto 0 auto;
-  max-width: 100%;
-  height: auto;
 }
 
 /* ===== Blocos claros ===== */
@@ -625,11 +615,11 @@ footer {
 }
 
 .titulo-conectados .azul {
-  color: #4DF6F9;
+  color: #121212;
 }
 
 .titulo-conectados .verde {
-  color: #4DF6F9;
+  color: #121212;
 }
 
 .caixas-conectados {
@@ -704,7 +694,7 @@ footer {
 }
 
 .diferenciais-franquias h2 {
-  color: #4DF6F9;
+  color: #121212;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 2.5rem;
@@ -912,7 +902,7 @@ body.pagina-branca {
 
 .solucoes h2 {
   font-size: 28px;
-  color: #4DF6F9;
+  color: #121212;
   margin-bottom: 40px;
 }
 
@@ -1329,4 +1319,39 @@ nav ul li a img {
   .consultas-container {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+/* ===== Título dos relatórios ===== */
+.titulo-consultas {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #121212; /* preto */
+  font-weight: 700;
+  width: 100%;
+  display: block;
+}
+
+.check-icon {
+  color: #121212;
+  margin-right: 8px;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+/* === Centralização dos títulos dos cards de consultas === */
+#consultas .consulta-card .consulta-info h3 {
+  display: flex;                  /* ícone + texto na mesma linha */
+  align-items: center;
+  justify-content: center;        /* centraliza horizontalmente */
+  gap: 8px;                       /* espaço entre o check e o texto */
+  color: #121212;
+  font-weight: 700;
+  margin: 0 0 10px 0;             /* margem inferior pro espaçamento */
+  text-align: center;             /* garante alinhamento do texto */
+}
+
+#consultas .consulta-card .check-icon {
+  color: #121212;
+  font-size: 20px;
 }

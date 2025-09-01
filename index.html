@@ -69,8 +69,7 @@
 
           <li><a href="empresa.html">A Empresa</a></li>
           <li><a href="solucoes.html">Soluções</a></li>
-          <li><a href="#">2ª Via de Boleto</a></li>
-          <li><a href="https://share.google/15lLZtasLEXeYLxlE">Atendimento</a></li>
+          <li><a href="#">Atendimento</a></li>
           <li><a href="https://app.checkok.com.br/entrar" class="btn-acessar">Acessar</a></li>
         </ul>
       </nav>
@@ -84,13 +83,16 @@
     </div>
   </section>
 
-  <!-- Container das consultas -->
-  <section id="consultas" class="consultas-container">
+<!-- Container das consultas -->
+<section id="consultas">
+  <h2 class="titulo-consultas">Relatórios e Consultas</h2>
+
+  <div class="consultas-container">
 
     <!-- Relatório Básico -->
     <div id="relatorio-basico" class="consulta-card" onclick="toggleCard(this)">
       <div class="consulta-info">
-        <h3>Relatório Básico</h3>
+        <h3><span class="check-icon">✔</span> Relatório Básico</h3>
         <div class="card-content">
           <p>Consulta básica de crédito, ideal para vendas de menor valor ou clientes recorrentes.</p>
           <ul>
@@ -110,7 +112,7 @@
     <!-- Relatório Avançado -->
     <div id="relatorio-avancado" class="consulta-card" onclick="toggleCard(this)">
       <div class="consulta-info">
-        <h3>Relatório Avançado</h3>
+        <h3><span class="check-icon">✔</span> Relatório Avançado</h3>
         <div class="card-content">
           <p>Consulta avançada de crédito, inclui todas as informações da consulta Básica mais dados extras como limite
             de crédito sugerido e renda ou faturamento presumido. Ideal para vendas de maior valor e negociações de
@@ -134,7 +136,7 @@
     <!-- Recomenda Crédito -->
     <div id="recuperacao-credito" class="consulta-card" onclick="toggleCard(this)">
       <div class="consulta-info">
-        <h3>Recomenda Crédito</h3>
+        <h3> <span class="check-icon">✔</span> Recomenda Crédito</h3>
         <div class="card-content">
           <p>Saiba qual o valor recomendado para realizar uma nova venda ao seu cliente.</p>
           <ul>
@@ -155,7 +157,7 @@
     <!-- OK Check -->
     <div id="ok-check" class="consulta-card" onclick="toggleCard(this)">
       <div class="consulta-info">
-        <h3>OK Check</h3>
+        <h3> <span class="check-icon">✔</span> OK Check</h3>
         <div class="card-content">
           <p>Consulta específica para operações com cheques.</p>
           <ul>
@@ -170,7 +172,7 @@
     <!-- OK Localiza -->
     <div id="ok-localiza" class="consulta-card" onclick="toggleCard(this)">
       <div class="consulta-info">
-        <h3>OK Localiza +</h3>
+        <h3> <span class="check-icon">✔</span> OK Localiza +</h3>
         <div class="card-content">
           <p>Pacote básico para identificação e localização de empresas e consumidores.</p>
           <ul>
@@ -186,7 +188,7 @@
     <!-- Monitoramento Serasa -->
     <div id="monitoramento-serasa" class="consulta-card" onclick="toggleCard(this)">
       <div class="consulta-info">
-        <h3>Monitoramento Serasa</h3>
+        <h3> <span class="check-icon">✔</span> Monitoramento Serasa</h3>
         <div class="card-content">
           <p>A partir da adesão, toda vez que realizar uma nova consulta de crédito, o documento entrará automaticamente
             no monitoramento. Você pode ter até 300 clientes monitorados, recebendo alertas de inclusões ou exclusões.
@@ -205,7 +207,7 @@
     <!-- Me Avise Serasa -->
     <div id="me-avise-serasa" class="consulta-card" onclick="toggleCard(this)">
       <div class="consulta-info">
-        <h3>Me Avise Serasa</h3>
+        <h3> <span class="check-icon">✔</span> Me Avise Serasa</h3>
         <div class="card-content">
           <p>Receba notificações em tempo real sobre a situação financeira e risco da sua empresa e dos sócios.</p>
           <ul>
@@ -221,7 +223,7 @@
     <!-- Negativações de Devedores -->
     <div id="negociacao-devedores" class="consulta-card" onclick="toggleCard(this)">
       <div class="consulta-info">
-        <h3>Negativações de Devedores</h3>
+        <h3> <span class="check-icon">✔</span> Negativações de Devedores</h3>
         <div class="card-content">
           <p>Inclusão do registro de dívidas e devedores no cadastro de inadimplentes da Serasa. Base usada por diversos
             setores e empresas para avaliar a reputação de crédito.</p>
@@ -232,7 +234,7 @@
     <!-- VENDA CERTA - PIX PARCELADO -->
     <div id="pix-pre" class="consulta-card" onclick="toggleCard(this)">
       <div class="consulta-info">
-        <h3>Pix Parcelado</h3>
+        <h3> <span class="check-icon">✔</span> Pix Parcelado</h3>
         <div class="card-content">
           <p>O Pix pré-datado funciona como alternativa ao boleto: em vez de gerar o documento, é enviada uma
             notificação ao cliente informando a data do débito. Mais prático e com custo reduzido (R$0,80 por
@@ -336,18 +338,15 @@
           Nunca envie senhas ou dados confidenciais por meio de formulários desconhecidos.
           Certifique-se de que este formulário foi gerado por sua empresa ou por uma empresa confiável.
           <br />
-          <a href="https://app.pipefy.com/public/form/F4YtikvP" style="font-size: 10px; margin-right: 10px;">Denunciar
-            Abuso</a> |
-          <a href="https://www.pipefy.com/terms-and-conditions" style="font-size: 10px; margin-left: 10px;">Termos e
-            Condições</a>
         </p>
         <input type="hidden" name="_autoresponse" value="Recebemos seus dados! Em breve entraremos em contato.">
       </form>
     </div>
   </section>
 
-<footer>
+  <footer>
     <div class="footer-cols">
+
       <body class="pagina-azul">
         <div>
           <h4>Verifik - Representante: Rede OK - Serasa</h4>
@@ -356,46 +355,34 @@
             cobrança automatizada. Mais segurança nas vendas, menos inadimplência.</p>
         </div>
 
-    <div>
-      <h4>Institucional</h4>
-      <ul>
-        <li><a href="index.html">Página Inicial</a></li>
-        <li><a href="empresa.html">Sobre a Verifik</a></li>
-        <li><a href="mailto:verifik@verifik.com.br">Trabalhe Conosco</a></li>
-      </ul>
+        <div>
+          <h4>Institucional</h4>
+          <ul>
+            <li><a href="empresa.html">Sobre a Verifik | Rede OK</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Atendimento</h4>
+          <ul>
+            <li><a href="https://www.redeok.site/contato">Fale Conosco</a></li>
+            <li><a href="https://maps.app.goo.gl/Pt7wGVgUMw9mJD6t7">Localização</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Siga a Verifik</h4>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/serasacascavel/"><img src="instagram.png" alt="Instagram"
+                title="Instagram" /></a>
+          </div>
+        </div>
     </div>
 
-    <div>
-      <h4>Atendimento</h4>
-      <ul>
-        <li><a href="https://www.redeok.site/contato">Fale Conosco</a></li>
-        <li><a href="#">2ª Via de Boleto</a></li>
-        <li><a href="https://maps.app.goo.gl/Pt7wGVgUMw9mJD6t7">Localização</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h4>Segurança de Dados</h4>
-      <ul>
-        <li><a href="privacidade.html">Política de Privacidade</a></li>
-        <li><a href="termos.html">Termos de Uso</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h4>Siga a Verifik</h4>
-      <div class="social-icons">
-        <a href="https://www.facebook.com/people/Verifik-Serasa"><img src="facebook.png" alt="Facebook" title="Facebook" /></a>
-        <a href="https://www.instagram.com/serasacascavel/"><img src="instagram.png" alt="Instagram" title="Instagram" /></a>
-        <a href="https://www.linkedin.com/company/rede-ok/"><img src="Linkedin.png" alt="LinkedIn" title="LinkedIn" /></a>
-      </div>
-    </div>
-  </div>
-
-  <p class="rodape-final">
-    © Verifik Análise de Crédito LTDA - Representante: Rede OK - Serasa | CNPJ: 49.706.689/0001-63
-  </p>
-</footer>
+    <p class="rodape-final">
+      © Verifik Análise de Crédito LTDA - Representante: Rede OK - Serasa | CNPJ: 49.706.689/0001-63
+    </p>
+  </footer>
 
   <button id="scrollTopBtn" class="scroll-top">↑</button>
 
