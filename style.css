@@ -906,21 +906,39 @@ body.pagina-branca {
   margin-bottom: 40px;
 }
 
+/* Apenas para os 4 cards da página soluções */
 .cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colunas fixas */
   gap: 24px;
-  align-items: stretch;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Responsivo: no tablet, 2 por linha */
+@media (max-width: 1024px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsivo: no celular, 1 por linha */
+@media (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 .card {
   background: #EFFFFF;
   color: #121212;
-  border-radius: 10px;
+  border-radius: 20px !important;
   padding: 20px;
   text-align: center;
-   border-radius: 20px !important;
+
+  display: flex;              /* vira flex container */
+  flex-direction: column;     /* organiza em coluna */
+  justify-content: space-between; /* distribui espaço */
 }
 
 .card img {
@@ -940,7 +958,7 @@ body.pagina-branca {
 }
 
 .card ul {
-  list-style: none;
+  list-style: none;   /* remove os pontinhos pretos */
   padding: 0;
   margin: 0 0 20px;
   font-size: 14px;
@@ -955,7 +973,14 @@ body.pagina-branca {
 }
 
 .card .botao {
-  align-self: center;
+  margin-top: auto;  /* garante que sempre vai pro rodapé do card */
+  display: inline-block;
+  background: #4DF6F9;
+  padding: 8px 16px;
+  color: #121212;
+  font-weight: bold;
+  border-radius: 999px !important;
+  text-decoration: none;
 }
 
 /* ===== Dropdown Serviços ===== */
