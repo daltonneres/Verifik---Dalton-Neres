@@ -220,12 +220,11 @@ nav a {
 }
 
 .form-section img {
-  flex: 0 0 40%;
-  /* ocupa no máximo 40% */
-  max-width: 400px;
-  /* limite absoluto, não passa disso */
-  height: auto;
+  flex: 0 0 50%;   /* ocupa até metade do espaço */
+  max-width: 550px; /* aumenta o limite absoluto */
+  height: auto;     /* mantém proporção */
 }
+
 
 .form-text {
   max-width: 350px;
