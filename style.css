@@ -11,7 +11,7 @@ header {
   top: unset;
   left: unset;
   width: 100%;
-  height: 110px;
+  height: 90px;
   background: #F1F1F1;
   z-index: 99999;
   display: flex;
@@ -73,7 +73,7 @@ header {
 
 /* Logo grande */
 .logo {
-  max-width: 100px;
+  max-width: 200px;
   height: auto;
 }
 
@@ -1129,69 +1129,6 @@ nav ul li {
   display: none;
 }
 
-/* ===== Popup genérico (lead) ===== */
-/* Fundo escuro */
-.popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-/* Caixa central */
-.popup {
-  background: #121212;
-  padding: 30px;
-  border-radius: 12px;
-  max-width: 400px;
-  width: 90%;
-  text-align: center;
-  position: relative;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
-  color: #ffffff;
-}
-
-/* Botão fechar */
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 20px;
-  cursor: pointer;
-  color: #ffffff;
-}
-
-/* Inputs */
-.popup input {
-  width: 90%;
-  padding: 10px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-/* Botão */
-.popup button {
-  background: #4DF6F9;
-  /* botão verde-água */
-  color: #121212;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  border-radius: 999px !important; /* formato pílula */
-}
-
-.popup button:hover {
-  background: #f1f1f1;
-}
-
 /* ===== Itens de navegação especiais ===== */
 .btn-acessar img {
   height: 40px;
@@ -1210,28 +1147,6 @@ nav ul li a img {
   background: none !important;
 }
 
-/* ===== Popup de imagem ===== */
-.popup-img {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.85);
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  cursor: pointer;
-}
-
-.popup-img img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-}
-
 .consulta-card {
   display: flex;
   align-items: flex-start;
@@ -1247,7 +1162,7 @@ nav ul li a img {
   overflow: hidden;
   cursor: pointer;
 
-  max-height: 60px;
+  max-height: 40px;
   /* fechado mostra só título + check */
   transition: max-height 0.4s ease, padding 0.3s ease;
    border-radius: 20px !important;
@@ -1257,6 +1172,15 @@ nav ul li a img {
 /* título sempre visível */
 .consulta-card h3 {
   margin: 0;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #121212;
+  font-weight: 600;
+  font-size: 16px;   /* <<< aqui você ajusta o tamanho */
+  margin: 0 0 8px 0;
+  text-align: center;
 }
 
 /* bloco escondido inicialmente */

@@ -13,25 +13,6 @@
 
 <body>
 
-  <!-- POPUP -->
-  <div class="popup-overlay" id="popup">
-    <div class="popup">
-      <span class="close-btn" onclick="fecharPopup()">×</span>
-      <h2>Bem-vindo à Verifik!</h2>
-      <p>Cadastre-se e receba nossas novidades e promoções exclusivas.</p>
-
-      <!-- Formulário -->
-      <form action="https://formsubmit.co/dev.neresdalton@gmail.com" method="POST">
-        <input type="text" name="nome" placeholder="Seu nome" required>
-        <input type="email" name="email" placeholder="Seu e-mail" required>
-        <button type="submit">Quero receber novidades</button>
-
-        <!-- resposta automática -->
-        <input type="hidden" name="_autoresponse" value="Obrigado por se cadastrar! Em breve enviaremos novidades.">
-      </form>
-    </div>
-  </div>
-
   <header>
     <div class="header-horizontal">
       <a href="index.html">
@@ -44,12 +25,6 @@
               <img src="venda-certa.png" alt="VendaCerta" class="logo-vendacerta" />
             </a>
           </li>
-
-          <!-- Popup escondido -->
-          <div id="popupImg" class="popup-img" onclick="fecharImagem()">
-            <img src="images.jpeg
-            " alt="Imagem Ampliada">
-          </div>
 
           <!-- Dropdown Serviços -->
           <li class="dropdown">
@@ -70,7 +45,7 @@
           <li><a href="empresa.html">A Empresa</a></li>
           <li><a href="solucoes.html">Soluções</a></li>
           <li><a href="https://wa.me/554532257420">Atendimento</a></li>
-          <li><a href="https://app.checkok.com.br/entrar" class="btn-acessar">Acessar</a></li>
+          <li><a href="https://wa.me/554532257420?text=Quero%20acessar%20os%20serviços/recursos%20da%20Verifik" class="btn-acessar">Acessar</a></li>
         </ul>
       </nav>
     </div>
@@ -83,165 +58,168 @@
     </div>
   </section>
 
-<!-- Container das consultas -->
-<section id="consultas">
-  <h2 class="titulo-consultas">Central de Recursos | VERIFIK | REDE OK</h2>
+  <!-- Container das consultas -->
+  <section id="consultas">
+    <h2 class="titulo-consultas">Serviços | VERIFIK | REDE OK</h2>
 
-  <div class="consultas-container">
+    <div class="consultas-container">
 
-    <!-- Relatório Básico -->
-    <div id="relatorio-basico" class="consulta-card" onclick="toggleCard(this)">
-      <div class="consulta-info">
-        <h3><span class="check-icon">✔</span> Relatório Básico</h3>
-        <div class="card-content">
-          <p>Consulta básica de crédito, ideal para vendas de menor valor ou clientes recorrentes.</p>
-          <ul>
-            <li>Identificação cadastral</li>
-            <li>Protesto nacional</li>
-            <li>Score Serasa</li>
-            <li>Negativação</li>
-            <li>Consultas à Serasa</li>
-            <li>Faturamento presumido anual</li>
-            <li>Participação societária</li>
-            <li>Serasa Score com positivo</li>
-          </ul>
+      <!-- Relatório Básico -->
+      <div id="relatorio-basico" class="consulta-card" onclick="toggleCard(this)">
+        <div class="consulta-info">
+          <h3>Relatório Básico <span class="check-icon">▼</span></h3>
+          <div class="card-content">
+            <p>Consulta básica de crédito, ideal para vendas de menor valor ou clientes recorrentes.</p>
+            <ul>
+              <li>Identificação cadastral</li>
+              <li>Protesto nacional</li>
+              <li>Score Serasa</li>
+              <li>Negativação</li>
+              <li>Consultas à Serasa</li>
+              <li>Faturamento presumido anual</li>
+              <li>Participação societária</li>
+              <li>Serasa Score com positivo</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Relatório Avançado -->
-    <div id="relatorio-avancado" class="consulta-card" onclick="toggleCard(this)">
-      <div class="consulta-info">
-        <h3><span class="check-icon">✔</span> Relatório Avançado</h3>
-        <div class="card-content">
-          <p>Consulta avançada de crédito, inclui todas as informações da consulta Básica mais dados extras como limite
-            de crédito sugerido e renda ou faturamento presumido. Ideal para vendas de maior valor e negociações de
-            risco.</p>
-          <ul>
-            <li>Ações judiciais</li>
-            <li>Consultas à Serasa</li>
-            <li>Identificação cadastral</li>
-            <li>Informações societárias completas</li>
-            <li>Novo</li>
-            <li>Participações societárias</li>
-            <li>Protesto estadual</li>
-            <li>Serasa score CNPJ</li>
-            <li>Serasa score com positivo</li>
-            <li>Sócios e administradores</li>
-          </ul>
+      <!-- Relatório Avançado -->
+      <div id="relatorio-avancado" class="consulta-card" onclick="toggleCard(this)">
+        <div class="consulta-info">
+          <h3>Relatório Avançado <span class="check-icon">▼</span></h3>
+          <div class="card-content">
+            <p>Consulta avançada de crédito, inclui todas as informações da consulta Básica mais dados extras como
+              limite
+              de crédito sugerido e renda ou faturamento presumido. Ideal para vendas de maior valor e negociações de
+              risco.</p>
+            <ul>
+              <li>Ações judiciais</li>
+              <li>Consultas à Serasa</li>
+              <li>Identificação cadastral</li>
+              <li>Informações societárias completas</li>
+              <li>Novo</li>
+              <li>Participações societárias</li>
+              <li>Protesto estadual</li>
+              <li>Serasa score CNPJ</li>
+              <li>Serasa score com positivo</li>
+              <li>Sócios e administradores</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Recomenda Crédito -->
-    <div id="recuperacao-credito" class="consulta-card" onclick="toggleCard(this)">
-      <div class="consulta-info">
-        <h3> <span class="check-icon">✔</span> Recomenda Crédito</h3>
-        <div class="card-content">
-          <p>Saiba qual o valor recomendado para realizar uma nova venda ao seu cliente.</p>
-          <ul>
-            <li>Recomendação de crédito</li>
-            <li>Limite de crédito sugerido</li>
-            <li>Indicativo de risco</li>
-            <li>Orientação de análise</li>
-            <li>Dívidas financeiras</li>
-            <li>Protestos nacionais</li>
-            <li>Serasa Score com dados positivos</li>
-            <li>Dados cadastrais</li>
-            <li>Consultas à Serasa</li>
-          </ul>
+      <!-- Recomenda Crédito -->
+      <div id="recuperacao-credito" class="consulta-card" onclick="toggleCard(this)">
+        <div class="consulta-info">
+          <h3>Recomenda Crédito  <span class="check-icon">▼</span></h3>
+          <div class="card-content">
+            <p>Saiba qual o valor recomendado para realizar uma nova venda ao seu cliente.</p>
+            <ul>
+              <li>Recomendação de crédito</li>
+              <li>Limite de crédito sugerido</li>
+              <li>Indicativo de risco</li>
+              <li>Orientação de análise</li>
+              <li>Dívidas financeiras</li>
+              <li>Protestos nacionais</li>
+              <li>Serasa Score com dados positivos</li>
+              <li>Dados cadastrais</li>
+              <li>Consultas à Serasa</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- OK Check -->
-    <div id="ok-check" class="consulta-card" onclick="toggleCard(this)">
-      <div class="consulta-info">
-        <h3> <span class="check-icon">✔</span> OK Check</h3>
-        <div class="card-content">
-          <p>Consulta específica para operações com cheques.</p>
-          <ul>
-            <li>Cheques sem fundos</li>
-            <li>Recheque detalhe CMC7 consultado</li>
-            <li>Recheque outras ocorrências (contumácia)</li>
-          </ul>
+      <!-- OK Check -->
+      <div id="ok-check" class="consulta-card" onclick="toggleCard(this)">
+        <div class="consulta-info">
+          <h3>OK Check <span class="check-icon">▼</span></h3>
+          <div class="card-content">
+            <p>Consulta específica para operações com cheques.</p>
+            <ul>
+              <li>Cheques sem fundos</li>
+              <li>Recheque detalhe CMC7 consultado</li>
+              <li>Recheque outras ocorrências (contumácia)</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- OK Localiza -->
-    <div id="ok-localiza" class="consulta-card" onclick="toggleCard(this)">
-      <div class="consulta-info">
-        <h3> <span class="check-icon">✔</span> OK Localiza +</h3>
-        <div class="card-content">
-          <p>Pacote básico para identificação e localização de empresas e consumidores.</p>
-          <ul>
-            <li>Endereços e telefones</li>
-            <li>Moradores no mesmo endereço</li>
-            <li>Outros documentos vinculados ao telefone</li>
-            <li>Participações societárias</li>
-          </ul>
+      <!-- OK Localiza -->
+      <div id="ok-localiza" class="consulta-card" onclick="toggleCard(this)">
+        <div class="consulta-info">
+          <h3>OK Localiza <span class="check-icon">▼</span></h3>
+          <div class="card-content">
+            <p>Pacote básico para identificação e localização de empresas e consumidores.</p>
+            <ul>
+              <li>Endereços e telefones</li>
+              <li>Moradores no mesmo endereço</li>
+              <li>Outros documentos vinculados ao telefone</li>
+              <li>Participações societárias</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Monitoramento Serasa -->
-    <div id="monitoramento-serasa" class="consulta-card" onclick="toggleCard(this)">
-      <div class="consulta-info">
-        <h3> <span class="check-icon">✔</span> Monitoramento Serasa</h3>
-        <div class="card-content">
-          <p>A partir da adesão, toda vez que realizar uma nova consulta de crédito, o documento entrará automaticamente
-            no monitoramento. Você pode ter até 300 clientes monitorados, recebendo alertas de inclusões ou exclusões.
-          </p>
-          <ul>
-            <li>Relatório Básico PF e PJ</li>
-            <li>Relatório Avançado PF e PJ</li>
-            <li>Empresarial Top CNPJ / Empresas Top CNPJ / Empresarial Mix - CNPJ</li>
-            <li>Ok Mix Top PF e PJ / Cadastro Top PF e PJ / Completa Mix PF e PJ</li>
-            <li>Ok Crédito Top PF e PJ / Crednet Top PF e PJ / Dívidas Varejos e Bancos Mix PF e PJ</li>
-          </ul>
+      <!-- Monitoramento Serasa -->
+      <div id="monitoramento-serasa" class="consulta-card" onclick="toggleCard(this)">
+        <div class="consulta-info">
+          <h3>Monitoramento Serasa <span class="check-icon">▼</span></h3>
+          <div class="card-content">
+            <p>A partir da adesão, toda vez que realizar uma nova consulta de crédito, o documento entrará
+              automaticamente
+              no monitoramento. Você pode ter até 300 clientes monitorados, recebendo alertas de inclusões ou exclusões.
+            </p>
+            <ul>
+              <li>Relatório Básico PF e PJ</li>
+              <li>Relatório Avançado PF e PJ</li>
+              <li>Empresarial Top CNPJ / Empresas Top CNPJ / Empresarial Mix - CNPJ</li>
+              <li>Ok Mix Top PF e PJ / Cadastro Top PF e PJ / Completa Mix PF e PJ</li>
+              <li>Ok Crédito Top PF e PJ / Crednet Top PF e PJ / Dívidas Varejos e Bancos Mix PF e PJ</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Me Avise Serasa -->
-    <div id="me-avise-serasa" class="consulta-card" onclick="toggleCard(this)">
-      <div class="consulta-info">
-        <h3> <span class="check-icon">✔</span> Me Avise Serasa</h3>
-        <div class="card-content">
-          <p>Receba notificações em tempo real sobre a situação financeira e risco da sua empresa e dos sócios.</p>
-          <ul>
-            <li>Monitore o CNPJ da empresa e até 3 sócios</li>
-            <li>Notificações 24h por dia</li>
-            <li>Alertas por e-mail e SMS</li>
-            <li>Proteção da credibilidade do negócio</li>
-          </ul>
+      <!-- Me Avise Serasa -->
+      <div id="me-avise-serasa" class="consulta-card" onclick="toggleCard(this)">
+        <div class="consulta-info">
+          <h3>Me Avise Serasa <span class="check-icon">▼</span></h3>
+          <div class="card-content">
+            <p>Receba notificações em tempo real sobre a situação financeira e risco da sua empresa e dos sócios.</p>
+            <ul>
+              <li>Monitore o CNPJ da empresa e até 3 sócios</li>
+              <li>Notificações 24h por dia</li>
+              <li>Alertas por e-mail e SMS</li>
+              <li>Proteção da credibilidade do negócio</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Negativações de Devedores -->
-    <div id="negociacao-devedores" class="consulta-card" onclick="toggleCard(this)">
-      <div class="consulta-info">
-        <h3> <span class="check-icon">✔</span> Negativações de Devedores</h3>
-        <div class="card-content">
-          <p>Inclusão do registro de dívidas e devedores no cadastro de inadimplentes da Serasa. Base usada por diversos
-            setores e empresas para avaliar a reputação de crédito.</p>
+      <!-- Negativações de Devedores -->
+      <div id="negociacao-devedores" class="consulta-card" onclick="toggleCard(this)">
+        <div class="consulta-info">
+          <h3>Negativação de Devedores <span class="check-icon">▼</span></h3>
+          <div class="card-content">
+            <p>Inclusão do registro de dívidas e devedores no cadastro de inadimplentes da Serasa. Base usada por
+              diversos
+              setores e empresas para avaliar a reputação de crédito.</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- VENDA CERTA - PIX PARCELADO -->
-    <div id="pix-pre" class="consulta-card" onclick="toggleCard(this)">
-      <div class="consulta-info">
-        <h3> <span class="check-icon">✔</span> Pix Parcelado</h3>
-        <div class="card-content">
-          <p>O Pix pré-datado funciona como alternativa ao boleto: em vez de gerar o documento, é enviada uma
-            notificação ao cliente informando a data do débito. Mais prático e com custo reduzido (R$0,80 por
-            transação).</p>
+      <!-- VENDA CERTA - PIX PARCELADO -->
+      <div id="pix-pre" class="consulta-card" onclick="toggleCard(this)">
+        <div class="consulta-info">
+          <h3>Pix Parcelado <span class="check-icon">▼</span></h3>
+          <div class="card-content">
+            <p>O Pix pré-datado funciona como alternativa ao boleto: em vez de gerar o documento, é enviada uma
+              notificação ao cliente informando a data do débito. Mais prático e com custo reduzido (R$0,80 por
+              transação).</p>
+          </div>
         </div>
       </div>
-    </div>
 
   </section>
 
