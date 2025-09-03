@@ -249,21 +249,25 @@ nav a {
 
 @media (max-width: 768px) {
   .form-section {
-    flex-direction: column; /* empilha */
-    align-items: flex-start; /* garante que fique colado à esquerda */
-    gap: 30px;
-    padding: 30px 15px;
-    text-align: left; /* evita centralizar o texto */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0; /* remove padding lateral */
+    position: relative; /* necessário para pseudo-elementos ou ajustes */
   }
 
   .form-section img {
-    max-width: 100%;
-    margin: 0; /* tira centralização */
+    width: 100vw; /* largura total da viewport */
+    margin-left: calc(-50vw + 50%); /* centraliza a imagem e remove bordas laterais */
+    height: auto;
+    display: block;
   }
 
   .form-section form {
     width: 100%;
-    max-width: 100%;
+    max-width: 600px;
+    padding: 0 15px; /* só pra o form não encostar nas bordas */
   }
 }
 
