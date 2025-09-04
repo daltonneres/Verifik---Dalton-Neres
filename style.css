@@ -1348,3 +1348,11 @@ nav ul li a img {
   color: #121212;
   font-size: 20px;
 }
+
+.titulo-formulario {
+  font-size: 24px;
+  font-weight: 700;
+  color: #121212;
+  margin-bottom: 20px;
+  text-align: center;
+}
