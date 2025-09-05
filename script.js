@@ -113,8 +113,8 @@ sendNameBtn.addEventListener("click", () => {
     const options = document.createElement("div");
     options.classList.add("options");
     options.innerHTML = `
-      <a href="https://wa.me/554532257420?text=Quero%20falar%20com%20o%20Suporte">🛠 Suporte</a>
-      <a href="https://wa.me/554532257421?text=Quero%20falar%20com%20Vendas">💼 Vendas</a>
+      <a href="https://api.whatsapp.com/send?phone=554532257420&text=Quero%20falar%20com%20o%20SUPORTE">🛠 Suporte</a>
+      <a href="https://api.whatsapp.com/send?phone=554532257420&text=Quero%20falar%20com%20o%20COMERCIAL">💼 Comercial</a>
     `;
     chatMessages.appendChild(options);
     chatMessages.scrollTop = chatMessages.scrollHeight;
