@@ -99,11 +99,9 @@ sendEmailBtn.addEventListener("click", () => {
 
 
   // Cria um formulário temporário e envia para Formsubmit.co
-  // Cria um formulário temporário e envia para Formsubmit.co
   const form = document.createElement("form");
-  form.action = "https://formsubmit.co/daltonjoseneres7@gmail.com";
+  form.action = "https://formsubmit.co/verifik@verifik.com.br";
   form.method = "POST";
-
   const nomeInput = document.createElement("input");
   nomeInput.name = "nome";
   nomeInput.value = name;
@@ -113,13 +111,6 @@ sendEmailBtn.addEventListener("click", () => {
   emailInput.name = "email";
   emailInput.value = email;
   form.appendChild(emailInput);
-
-  // CAMPO OCULTO DE ORIGEM
-  const origemInput = document.createElement("input");
-  origemInput.type = "hidden";
-  origemInput.name = "origem";
-  origemInput.value = "Formulário - Chat WhatsApp";
-  form.appendChild(origemInput);
 
   document.body.appendChild(form);
   form.submit();
