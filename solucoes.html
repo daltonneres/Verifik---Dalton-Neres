@@ -20,7 +20,7 @@
       <nav>
         <ul>
           <li>
-            <a href="venda-certa.png" target="_blank">
+            <a href="Banner celular.svg" target="_blank">
               <img src="venda-certa.png" alt="VendaCerta" class="logo-vendacerta" />
             </a>
           </li>
@@ -43,7 +43,12 @@
 
           <li><a href="empresa.html">A Empresa</a></li>
           <li><a href="solucoes.html">Soluções</a></li>
-          <li><a href="https://wa.me/554532257420">Suporte & Vendas</a></li>
+          <li><a
+              href="https://api.whatsapp.com/send?phone=554532257420&text=Quero%20falar%20com%20o%20COMERCIAL">Atendimento
+              | Comercial</a></li>
+          <li><a
+              href="https://api.whatsapp.com/send?phone=554532257420&text=Quero%20falar%20com%20o%20SUPORTE">Atendimento
+              | Suporte</a></li>
           <li><a href="https://app.checkok.com.br/entrar" class="btn-acessar">Acessar</a></li>
         </ul>
       </nav>
@@ -113,40 +118,40 @@
     </div>
   </section>
 
-<section class="form-section animate-on-scroll">
-  <img src="Banner.svg" alt="Imagem celular" title="Imagem celular" />
-  <div class="formulario-box">
-    <h2 class="titulo-formulario">Entre em Contato Conosco</h2>
-    <form action="https://formsubmit.co/verifik@verifil.com.br" method="POST">
-        <p>Preencha o formulário e receba a melhor solução para seu negócio!</p>
+  <section class="form-section animate-on-scroll">
+    <img src="Banner.svg" alt="Imagem celular" title="Imagem celular" />
+    <div class="formulario-box">
+      <h2 class="titulo-formulario">Entre em Contato Conosco</h2>
+      <form action="https://formsubmit.co/daltonjoseneres7@gmail.com" method="POST" />
+      <p>Preencha o formulário e receba a melhor solução para seu negócio!</p>
 
-        <label>* Seu nome</label>
-        <input type="text" name="nome" placeholder="Digite aqui ..." required />
+      <label>* Seu nome</label>
+      <input type="text" name="nome" placeholder="Digite aqui ..." required />
 
-        <label>* Seu CNPJ</label>
-        <input type="text" name="cnpj" placeholder="Digite aqui ..." required />
+      <label>* Seu CNPJ</label>
+      <input type="text" name="cnpj" placeholder="Digite aqui ..." required />
 
-        <label>* Seu WhatsApp</label>
-        <input type="text" name="whatsapp" placeholder="Digite aqui ..." required />
+      <label>* Seu WhatsApp</label>
+      <input type="text" name="whatsapp" placeholder="Digite aqui ..." required />
 
-        <label>* Seu e-mail</label>
-        <input type="email" name="email" placeholder="Digite aqui ..." required />
+      <label>* Seu e-mail</label>
+      <input type="email" name="email" placeholder="Digite aqui ..." required />
 
 
-        <p style="font-size: 13px;">
-          Você receberá nossas informações por e-mail. Fique atento à sua caixa de entrada.
-        </p>
+      <p style="font-size: 13px;">
+        Você receberá nossas informações por e-mail. Fique atento à sua caixa de entrada.
+      </p>
 
-        <!-- botão -->
-        <button type="submit">Enviar</button>
+      <!-- botão -->
+      <button type="submit">Enviar</button>
 
-        <!-- aviso + links -->
-        <p style="font-size: 10px;">
-          Nunca envie senhas ou dados confidenciais por meio de formulários desconhecidos.
-          Certifique-se de que este formulário foi gerado por sua empresa ou por uma empresa confiável.
-          <br />
-        </p>
-        <input type="hidden" name="_autoresponse" value="Recebemos seus dados! Em breve entraremos em contato.">
+      <!-- aviso + links -->
+      <p style="font-size: 10px;">
+        Nunca envie senhas ou dados confidenciais por meio de formulários desconhecidos.
+        Certifique-se de que este formulário foi gerado por sua empresa ou por uma empresa confiável.
+        <br />
+      </p>
+      <input type="hidden" name="_autoresponse" value="Recebemos seus dados! Em breve entraremos em contato.">
       </form>
     </div>
   </section>
@@ -197,19 +202,25 @@
       <img src="whatsapp.png" alt="WhatsApp Verifik" title="WhatsApp Verifik" />
     </button>
 
-    <!-- Área de chat -->
-    <div id="whatsappMenu" class="whatsapp-menu">
-      <div class="chat-messages" id="chatMessages">
-        <!-- mensagens serão inseridas pelo JS -->
+    <div id="whatsappMenu" class="whatsapp-menu" style="display: none;">
+      <div class="chat-messages" id="chatMessages"></div>
+
+      <!-- Campo Nome -->
+      <div id="chatInput" style="display: none;">
+        <input type="text" id="userName" placeholder="Digite seu nome" />
+        <button id="sendName">Enviar</button>
       </div>
 
-      <!-- input para pegar o nome -->
-      <div id="chatInput" class="chat-input" style="display:none;">
-        <input type="text" id="userName" placeholder="Digite seu nome..." />
-        <button id="sendName">Enviar</button>
+      <!-- Campo E-mail -->
+      <div id="emailInput" style="display: none;">
+        <input type="email" id="userEmail" placeholder="Digite seu e-mail" />
+        <button id="sendEmail">Enviar</button>
       </div>
     </div>
   </div>
+
+  <!-- Botão de voltar ao topo -->
+  <button id="scrollTopBtn" class="scroll-top">↑</button>
 
   <script src="script.js"></script>
 </body>

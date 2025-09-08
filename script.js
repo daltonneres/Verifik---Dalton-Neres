@@ -16,13 +16,14 @@ function toggleCard(el) {
 // Menu WhatsApp
 const openBtn = document.getElementById("openWhatsappMenu");
 const menu = document.getElementById("whatsappMenu");
-
 const chatMessages = document.getElementById("chatMessages");
 const chatInput = document.getElementById("chatInput");
 const sendNameBtn = document.getElementById("sendName");
 const userNameInput = document.getElementById("userName");
+const emailInputDiv = document.getElementById("emailInput");
+const sendEmailBtn = document.getElementById("sendEmail");
+const userEmailInput = document.getElementById("userEmail");
 
-// Array para guardar os timeouts ativos
 let chatTimeouts = [];
 
 function addMessage(text, type = "bot") {
@@ -33,36 +34,33 @@ function addMessage(text, type = "bot") {
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-// Função para limpar todos os timeouts
 function resetChat() {
   chatTimeouts.forEach(id => clearTimeout(id));
   chatTimeouts = [];
   chatMessages.innerHTML = "";
   chatInput.style.display = "none";
+  emailInputDiv.style.display = "none";
   userNameInput.value = "";
+  userEmailInput.value = "";
 }
 
 // Fecha ao clicar fora
-if (openBtn && menu) {
-  document.addEventListener("click", (e) => {
-    if (!menu.contains(e.target) && !openBtn.contains(e.target)) {
-      menu.style.display = "none";
-      resetChat(); // limpa tudo ao fechar
-    }
-  });
-}
+document.addEventListener("click", (e) => {
+  if (!menu.contains(e.target) && !openBtn.contains(e.target)) {
+    menu.style.display = "none";
+    resetChat();
+  }
+});
 
-// Quando abrir o menu, inicia o chat
+// Abre o menu e inicia o chat
 openBtn.addEventListener("click", (e) => {
   e.stopPropagation();
-
   if (menu.style.display === "block") {
     menu.style.display = "none";
     resetChat();
   } else {
     menu.style.display = "block";
     resetChat();
-
     addMessage("👋 Seja bem-vindo ao autoatendimento da VERIFIK!");
     chatTimeouts.push(setTimeout(() => {
       addMessage("Por favor, nos diga seu nome:");
@@ -71,11 +69,10 @@ openBtn.addEventListener("click", (e) => {
   }
 });
 
-// Quando enviar o nome
+// Envia nome
 sendNameBtn.addEventListener("click", () => {
   const name = userNameInput.value.trim();
   if (!name) return;
-
   addMessage(name, "user");
   chatInput.style.display = "none";
 
@@ -83,31 +80,45 @@ sendNameBtn.addEventListener("click", () => {
     addMessage(`Prazer em falar com você, ${name}! 😃`);
   }, 800));
 
-  // Após 8s → Instagram
   chatTimeouts.push(setTimeout(() => {
-    addMessage("📲 Já nos acompanha no Instagram?");
-    const options = document.createElement("div");
-    options.classList.add("options");
-    options.innerHTML = `
-      <a href="https://www.instagram.com/serasacascavel/" target="_blank">📸 Acessar Instagram</a>
-    `;
-    chatMessages.appendChild(options);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-  }, 8000));
+    addMessage("Agora, poderia nos informar seu e-mail?");
+    emailInputDiv.style.display = "flex";
+  }, 2000));
+});
 
-  // Após +8s → Guia de Soluções
-  chatTimeouts.push(setTimeout(() => {
-    addMessage("📘 Confira também nosso Guia de Soluções:");
-    const options = document.createElement("div");
-    options.classList.add("options");
-    options.innerHTML = `
-      <a href="https://www.verifik.com.br/solucoes" target="_blank">📑 Ver Guia de Soluções</a>
-    `;
-    chatMessages.appendChild(options);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-  }, 16000));
+// Envia e-mail usando Formsubmit.co
+sendEmailBtn.addEventListener("click", () => {
+  const email = userEmailInput.value.trim();
+  const name = userNameInput.value.trim();
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    addMessage("❌ Por favor, insira um e-mail válido.");
+    return;
+  }
+  addMessage(email, "user");
+  emailInputDiv.style.display = "none";
 
-  // Após +8s → Suporte e Vendas
+
+  // Cria um formulário temporário e envia para Formsubmit.co
+  const form = document.createElement("form");
+  form.action = "https://formsubmit.co/daltonjoseneres7@gmail.com";
+  form.method = "POST";
+  const nomeInput = document.createElement("input");
+  nomeInput.name = "nome";
+  nomeInput.value = name;
+  form.appendChild(nomeInput);
+
+  const emailInput = document.createElement("input");
+  emailInput.name = "email";
+  emailInput.value = email;
+  form.appendChild(emailInput);
+
+  document.body.appendChild(form);
+  form.submit();
+  document.body.removeChild(form);
+
+  addMessage("📩 Seus dados foram enviados com sucesso!");
+
+  // Opções de suporte/comercial
   chatTimeouts.push(setTimeout(() => {
     addMessage("Escolha uma opção abaixo para falar conosco:");
     const options = document.createElement("div");
@@ -118,10 +129,28 @@ sendNameBtn.addEventListener("click", () => {
     `;
     chatMessages.appendChild(options);
     chatMessages.scrollTop = chatMessages.scrollHeight;
-  }, 24000));
+  }, 2000));
 
-  // Após +8s → Agradecimento final
+  // Agradecimento final
   chatTimeouts.push(setTimeout(() => {
     addMessage("✅ Agradecemos novamente pelo seu contato, estamos à disposição!");
-  }, 32000));
+  }, 8000));
+});
+
+// Botão voltar ao topo
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollBtn.style.display = "block";
+  } else {
+    scrollBtn.style.display = "none";
+  }
+});
+
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 });

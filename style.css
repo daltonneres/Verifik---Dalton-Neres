@@ -371,18 +371,32 @@ footer {
   color: #EFFFFF;
 }
 
+/* Centralizar os ícones sociais no rodapé */
 .social-icons {
   margin-top: 15px;
+  display: flex;
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center;     /* garante alinhamento vertical */
 }
 
 .social-icons img {
   width: 30px;
-  margin-right: 10px;
+  margin: 0 5px; /* espaçamento lateral */
   transition: transform 0.3s ease;
 }
 
 .social-icons img:hover {
   transform: scale(1.1);
+}
+
+.footer-cols div:last-child {
+  text-align: center; /* centraliza o conteúdo */
+}
+
+.footer-cols div:last-child .social-icons {
+  display: flex;
+  justify-content: center; /* centraliza os ícones */
+  margin-top: 10px;
 }
 
 .rodape-final {
@@ -1480,4 +1494,47 @@ nav ul li a img {
   background: #4DF6F9;
   border-color: #4DF6F9;
   color: #121212 !important;
+}
+
+/* Container dos inputs do chat */
+#chatInput,
+#emailInput {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* Campo de texto */
+#chatInput input,
+#emailInput input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+#chatInput input:focus,
+#emailInput input:focus {
+  border-color: #4DF6F9; /* cor de destaque ao focar */
+}
+
+/* Botão Enviar */
+#chatInput button,
+#emailInput button {
+  padding: 10px 16px;
+  background-color: #4DF6F9;
+  color: #121212;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+#chatInput button:hover,
+#emailInput button:hover {
+  background-color: #4DF6F9;
 }
