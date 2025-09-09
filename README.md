@@ -1,38 +1,37 @@
-# Verifik - Site Institucional
+# Verifik - Site Institucional  
 
-## Descrição
+## Descrição  
 
-Este projeto é o site institucional da Verifik, distribuidor autorizado rede OK, que oferece soluções de consultas, monitoramento e prevenção de fraudes para empresas. O site apresenta um banner com carrossel, seções de soluções, FAQ interativo e um rodapé informativo.
+Este projeto é o **site institucional da Verifik**, representante autorizado da Rede OK e parceira Serasa. O site apresenta soluções completas em **consultas de crédito, negativação online, monitoramento de CNPJs, cobrança automatizada e Pix parcelado**, oferecendo segurança e praticidade para empresas que vendem a prazo.  
 
-## Funcionalidades principais
+O design foi desenvolvido de forma **clara, responsiva e objetiva**, priorizando a apresentação dos serviços e a conversão de contatos comerciais.  
 
-- Banner com carrossel de imagens e navegação por setas laterais.
-- Seção de soluções com cards responsivos e estilizados.
-- FAQ interativo com perguntas clicáveis que expandem para mostrar respostas.
-- Layout responsivo para diferentes tamanhos de tela.
-- Rodapé com links úteis e informações institucionais.
-- Botão flutuante para voltar ao topo e botão WhatsApp fixo.
+## Funcionalidades  
 
-## Tecnologias utilizadas
+- **Seções de soluções em cards responsivos**, com descrições detalhadas.  
+- **Formulários de contato integrados**, para captação de leads.  
+- **Botão do WhatsApp fixo e interativo**, com menu que solicita **nome** e **CNPJ** antes do atendimento.  
+- **Botão de retorno ao topo**, melhorando a navegação.  
+- **Rodapé institucional completo**, com informações da empresa, links úteis, localização e redes sociais.  
 
-- HTML5  
-- CSS3 (Flexbox e Grid)  
-- JavaScript (interatividade do carrossel e FAQ)  
+## Tecnologias utilizadas  
 
-## Como executar o projeto
+- **HTML5**  
+- **CSS3 (Flexbox e Grid)**  
+- **JavaScript** (para formulários, menu do WhatsApp e interatividade)  
 
-1. Clone este repositório:
+## Como executar o projeto  
+
+1. Clone este repositório:  
    ```bash
    git clone https://github.com/daltonneres/agencia_dalton01.git
+Abra o arquivo index.html em seu navegador preferido.
 
-2. Abra o arquivo index.html no navegador de sua preferência.
-3. E logo após execute o mesmo
+Contato
+Para dúvidas, sugestões ou parcerias, entre em contato:
 
-## Contato
-Para dúvidas ou sugestões, entre em contato:
+E-mail: daltonneres1@gmail.com
+LinkedIn: Dalton José Neres
 
-Email: daltonneres1@gmail.com
-LinkedIn: https://www.linkedin.com/in/dalton-josé-neres
-
-## Licença
-Este projeto está licenciado sob a licença MIT — veja o arquivo LICENSE para detalhes.
+Licença
+Este projeto está licenciado sob a MIT License – consulte o arquivo LICENSE para mais detalhes.
