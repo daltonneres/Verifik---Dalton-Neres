@@ -1,5 +1,4 @@
 // OPEN
-
 function toggleCard(el) {
   const card = el.closest(".consulta-card");
   const allCards = document.querySelectorAll(".consulta-card");
@@ -20,11 +19,64 @@ const chatMessages = document.getElementById("chatMessages");
 const chatInput = document.getElementById("chatInput");
 const sendNameBtn = document.getElementById("sendName");
 const userNameInput = document.getElementById("userName");
-const emailInputDiv = document.getElementById("emailInput");
-const sendEmailBtn = document.getElementById("sendEmail");
-const userEmailInput = document.getElementById("userEmail");
+
+// 🔹 Alterado para CNPJ
+const cnpjInputDiv = document.getElementById("cnpjInput");
+const sendCnpjBtn = document.getElementById("sendCnpj");
+const userCnpjInput = document.getElementById("userCnpj");
 
 let chatTimeouts = [];
+
+// 👉 Máscara automática para CNPJ
+userCnpjInput.addEventListener("input", (e) => {
+  let value = e.target.value.replace(/\D/g, ""); // só números
+  if (value.length > 14) value = value.slice(0, 14);
+
+  if (value.length <= 2) {
+    value = value.replace(/(\d{0,2})/, "$1");
+  } else if (value.length <= 5) {
+    value = value.replace(/(\d{2})(\d{0,3})/, "$1.$2");
+  } else if (value.length <= 8) {
+    value = value.replace(/(\d{2})(\d{3})(\d{0,3})/, "$1.$2.$3");
+  } else if (value.length <= 12) {
+    value = value.replace(/(\d{2})(\d{3})(\d{3})(\d{0,4})/, "$1.$2.$3/$4");
+  } else {
+    value = value.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2})/, "$1.$2.$3/$4-$5");
+  }
+
+  e.target.value = value;
+});
+
+// Função para validar CNPJ
+function validarCNPJ(cnpj) {
+  cnpj = cnpj.replace(/[^\d]+/g, "");
+  if (cnpj.length !== 14) return false;
+  if (/^(\d)\1+$/.test(cnpj)) return false;
+
+  let tamanho = cnpj.length - 2;
+  let numeros = cnpj.substring(0, tamanho);
+  let digitos = cnpj.substring(tamanho);
+  let soma = 0;
+  let pos = tamanho - 7;
+
+  for (let i = tamanho; i >= 1; i--) {
+    soma += numeros.charAt(tamanho - i) * pos--;
+    if (pos < 2) pos = 9;
+  }
+  let resultado = soma % 11 < 2 ? 0 : 11 - (soma % 11);
+  if (resultado != digitos.charAt(0)) return false;
+
+  tamanho = tamanho + 1;
+  numeros = cnpj.substring(0, tamanho);
+  soma = 0;
+  pos = tamanho - 7;
+  for (let i = tamanho; i >= 1; i--) {
+    soma += numeros.charAt(tamanho - i) * pos--;
+    if (pos < 2) pos = 9;
+  }
+  resultado = soma % 11 < 2 ? 0 : 11 - (soma % 11);
+  return resultado == digitos.charAt(1);
+}
 
 function addMessage(text, type = "bot") {
   const msg = document.createElement("div");
@@ -39,9 +91,9 @@ function resetChat() {
   chatTimeouts = [];
   chatMessages.innerHTML = "";
   chatInput.style.display = "none";
-  emailInputDiv.style.display = "none";
+  cnpjInputDiv.style.display = "none"; // 🔹 reset CNPJ
   userNameInput.value = "";
-  userEmailInput.value = "";
+  userCnpjInput.value = "";
 }
 
 // Fecha ao clicar fora
@@ -81,52 +133,53 @@ sendNameBtn.addEventListener("click", () => {
   }, 800));
 
   chatTimeouts.push(setTimeout(() => {
-    addMessage("Agora, poderia nos informar seu e-mail?");
-    emailInputDiv.style.display = "flex";
+    addMessage("Agora, poderia nos informar seu CNPJ?");
+    cnpjInputDiv.style.display = "flex"; // 🔹 pede CNPJ
   }, 2000));
 });
 
-// Envia e-mail usando Formsubmit.co
-sendEmailBtn.addEventListener("click", () => {
-  const email = userEmailInput.value.trim();
+// Envia CNPJ via AJAX
+sendCnpjBtn.addEventListener("click", () => {
+  const cnpj = userCnpjInput.value.trim();
   const name = userNameInput.value.trim();
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    addMessage("❌ Por favor, insira um e-mail válido.");
+  if (!cnpj || !validarCNPJ(cnpj)) {
+    addMessage("❌ Por favor, insira um CNPJ válido.");
     return;
   }
-  addMessage(email, "user");
-  emailInputDiv.style.display = "none";
+  addMessage(cnpj, "user");
+  cnpjInputDiv.style.display = "none";
 
+  // 🔹 Envia com fetch para Formsubmit.co
+  fetch("https://formsubmit.co/ajax/verifik@verifik.com.br", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify({ nome: name, cnpj: cnpj })
+  })
+    .then(response => response.json())
+    .then(data => {
+      addMessage("📩 Seus dados foram enviados com sucesso!");
+    })
+    .catch(error => {
+      addMessage("⚠️ Ocorreu um erro ao enviar os dados. Tente novamente.");
+    });
 
-  // Cria um formulário temporário e envia para Formsubmit.co
-  const form = document.createElement("form");
-  form.action = "https://formsubmit.co/verifik@verifik.com.br";
-  form.method = "POST";
-  const nomeInput = document.createElement("input");
-  nomeInput.name = "nome";
-  nomeInput.value = name;
-  form.appendChild(nomeInput);
-
-  const emailInput = document.createElement("input");
-  emailInput.name = "email";
-  emailInput.value = email;
-  form.appendChild(emailInput);
-
-  document.body.appendChild(form);
-  form.submit();
-  document.body.removeChild(form);
-
-  addMessage("📩 Seus dados foram enviados com sucesso!");
-
-  // Opções de suporte/comercial
+  // Opções de suporte/comercial com nome e CNPJ
   chatTimeouts.push(setTimeout(() => {
     addMessage("Escolha uma opção abaixo para falar conosco:");
     const options = document.createElement("div");
     options.classList.add("options");
+
+    const suporteMsg = `Olá, meu nome é ${name} e meu CNPJ é ${cnpj}. Quero falar com o SUPORTE.`;
+    const comercialMsg = `Olá, meu nome é ${name} e meu CNPJ é ${cnpj}. Quero falar com o COMERCIAL.`;
+
     options.innerHTML = `
-      <a href="https://api.whatsapp.com/send?phone=554532257420&text=Quero%20falar%20com%20o%20SUPORTE">🛠 Suporte</a>
-      <a href="https://api.whatsapp.com/send?phone=554532257420&text=Quero%20falar%20com%20o%20COMERCIAL">💼 Comercial</a>
+      <a href="https://api.whatsapp.com/send?phone=554532257420&text=${encodeURIComponent(suporteMsg)}">🛠 Suporte</a>
+      <a href="https://api.whatsapp.com/send?phone=554532257420&text=${encodeURIComponent(comercialMsg)}">💼 Comercial</a>
     `;
+
     chatMessages.appendChild(options);
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }, 2000));

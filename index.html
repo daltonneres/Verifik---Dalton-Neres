@@ -43,12 +43,6 @@
 
           <li><a href="empresa.html">A Empresa</a></li>
           <li><a href="solucoes.html">Soluções</a></li>
-          <li><a
-              href="https://api.whatsapp.com/send?phone=554532257420&text=Quero%20falar%20com%20o%20COMERCIAL">Atendimento
-              | Comercial</a></li>
-          <li><a
-              href="https://api.whatsapp.com/send?phone=554532257420&text=Quero%20falar%20com%20o%20SUPORTE">Atendimento
-              | Suporte</a></li>
           <li><a href="https://app.checkok.com.br/entrar" class="btn-acessar">Acessar</a></li>
         </ul>
       </nav>
@@ -288,42 +282,45 @@
     <img src="Banner.svg" alt="Imagem celular" title="Imagem celular" />
     <div class="formulario-box">
       <h2 class="titulo-formulario">Entre em Contato Conosco</h2>
-      <form action="https://formsubmit.co/verifik@verifik.com.br" method="POST" />
       <p>Quer vender mais com segurança? Preencha e fale com um especialista!</p>
 
-      <label>* Seu nome</label>
-      <input type="text" name="nome" placeholder="Digite aqui ..." required />
+      <form id="contatoForm">
+        <label>* Seu nome</label>
+        <input type="text" name="nome" placeholder="Digite aqui ..." required />
 
-      <label>* Seu CNPJ</label>
-      <input type="text" name="cnpj" placeholder="Digite aqui ..." required />
+        <label>* Seu CNPJ</label>
+        <input type="text" name="cnpj" placeholder="Digite aqui ..." required />
 
-      <label>* Seu WhatsApp</label>
-      <input type="text" name="whatsapp" placeholder="Digite aqui ..." required />
+        <label>* Seu WhatsApp</label>
+        <input type="text" name="whatsapp" placeholder="Digite aqui ..." required />
 
-      <label>* Seu e-mail</label>
-      <input type="email" name="email" placeholder="Digite aqui ..." required />
+        <label>* Seu e-mail</label>
+        <input type="email" name="email" placeholder="Digite aqui ..." required />
 
-      <label>* Você utiliza algum software de gestão na sua empresa?</label>
-      <div>
-        <input type="radio" name="gestao" value="Sim" /> Sim
-        <input type="radio" name="gestao" value="Não" /> Não
-      </div>
+        <label>* Você utiliza algum software de gestão na sua empresa?</label>
+        <div>
+          <input type="radio" name="gestao" value="Sim" /> Sim
+          <input type="radio" name="gestao" value="Não" /> Não
+        </div>
 
-      <p style="font-size: 13px;">
-        Você receberá nossas informações por e-mail. Fique atento à sua caixa de entrada.
-      </p>
+        <p style="font-size: 13px;">
+          Você receberá nossas informações por e-mail. Fique atento à sua caixa de entrada.
+        </p>
 
-      <!-- botão -->
-      <button type="submit">Enviar</button>
+        <!-- botão -->
+        <button type="submit">Enviar</button>
 
-      <!-- aviso + links -->
-      <p style="font-size: 10px;">
-        Nunca envie senhas ou dados confidenciais por meio de formulários desconhecidos.
-        Certifique-se de que este formulário foi gerado por sua empresa ou por uma empresa confiável.
-        <br />
-      </p>
-      <input type="hidden" name="_autoresponse" value="Recebemos seus dados! Em breve entraremos em contato.">
+        <!-- aviso + links -->
+        <p style="font-size: 10px;">
+          Nunca envie senhas ou dados confidenciais por meio de formulários desconhecidos.
+          Certifique-se de que este formulário foi gerado por sua empresa ou por uma empresa confiável.
+        </p>
+
+        <input type="hidden" name="_autoresponse" value="Recebemos seus dados! Em breve entraremos em contato.">
       </form>
+
+      <!-- mensagem de retorno -->
+      <p id="mensagem" style="margin-top:10px;"></p>
     </div>
   </section>
 
@@ -382,10 +379,10 @@
         <button id="sendName">Enviar</button>
       </div>
 
-      <!-- Campo E-mail -->
-      <div id="emailInput" style="display: none;">
-        <input type="email" id="userEmail" placeholder="Digite seu e-mail" />
-        <button id="sendEmail">Enviar</button>
+      <!-- Campo para CNPJ -->
+      <div id="cnpjInput" style="display:none;">
+        <input type="text" id="userCnpj" placeholder="Digite seu CNPJ" maxlength="18" />
+        <button id="sendCnpj">Enviar</button>
       </div>
     </div>
   </div>
@@ -393,7 +390,43 @@
   <!-- Botão de voltar ao topo -->
   <button id="scrollTopBtn" class="scroll-top">↑</button>
 
-  <script src="script.js"></script>
+
+      <script>
+        document.getElementById("contatoForm").addEventListener("submit", function (e) {
+          e.preventDefault(); // impede recarregar a página
+
+          const form = e.target;
+
+          const data = {
+            nome: form.nome.value,
+            cnpj: form.cnpj.value,
+            whatsapp: form.whatsapp.value,
+            email: form.email.value,
+            gestao: form.gestao.value,
+            _autoresponse: form._autoresponse.value
+          };
+
+          fetch("https://formsubmit.co/ajax/verifik@verifik.com.br", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+            },
+            body: JSON.stringify(data)
+          })
+            .then(response => response.json())
+            .then(() => {
+              document.getElementById("mensagem").innerText = "✅ Obrigado por responder!";
+              form.reset();
+            })
+            .catch(() => {
+              document.getElementById("mensagem").innerText = "⚠️ Erro ao enviar, tente novamente.";
+            });
+        });
+      </script>
+
+
+      <script src="script.js"></script>
 </body>
 
 </html>

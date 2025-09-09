@@ -1523,7 +1523,7 @@ nav ul li a img {
 
 /* Botão Enviar */
 #chatInput button,
-#emailInput button {
+#cnpjInput button {
   padding: 10px 16px;
   background-color: #4DF6F9;
   color: #121212;
@@ -1535,6 +1535,6 @@ nav ul li a img {
 }
 
 #chatInput button:hover,
-#emailInput button:hover {
+#cnpjInput button:hover {
   background-color: #4DF6F9;
 }
