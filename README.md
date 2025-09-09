@@ -47,13 +47,13 @@ empresa.html → Página institucional com informações sobre a Verifik, missã
 
 solucoes.html → Página dedicada às soluções oferecidas, organizada em categorias com cards interativos.
 
-## 📬 Contato
+## 👨‍💻 Desenvolvedor  
 
-Para dúvidas, sugestões ou parcerias:
+Este projeto foi desenvolvido por **Dalton Neres**, **Full Stack Developer**, com foco em **criação de sites institucionais, aplicações web modernas e soluções acessíveis**.  
 
-E-mail: daltonneres1@gmail.com
-
-LinkedIn: Dalton José Neres
+- 🔗 **GitHub:** [Dalton Neres](https://github.com/daltonneres)  
+- 🌍 **Portfólio:** [Dalton Neres - Portfólio](https://github.com/daltonneres)  
+- 💼 **LinkedIn:** [Dalton José Neres](https://www.linkedin.com/in/dalton-josé-neres)  
 
 ## 📄 Licença
 
