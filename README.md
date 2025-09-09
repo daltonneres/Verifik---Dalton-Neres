@@ -51,8 +51,6 @@ solucoes.html → Página dedicada às soluções oferecidas, organizada em cate
 
 Para dúvidas, sugestões ou parcerias:
 
----
-
 E-mail: daltonneres1@gmail.com
 
 LinkedIn: Dalton José Neres
