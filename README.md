@@ -1,35 +1,59 @@
-# Verifik - Site Institucional  
+# 🌐 Verifik - Site Institucional  
 
-## Descrição  
+## 📖 Sobre o Projeto  
 
-Este projeto é o **site institucional da Verifik**, representante autorizado da Rede OK e parceira Serasa. O site apresenta soluções completas em **consultas de crédito, negativação online, monitoramento de CNPJs, cobrança automatizada e Pix parcelado**, oferecendo segurança e praticidade para empresas que vendem a prazo.  
+O **site institucional da Verifik** foi desenvolvido para apresentar a empresa como **representante autorizado da Rede OK e parceira Serasa**, oferecendo soluções modernas em:  
 
-O design foi desenvolvido de forma **clara, responsiva e objetiva**, priorizando a apresentação dos serviços e a conversão de contatos comerciais.  
+- Consultas de crédito (CPF e CNPJ)  
+- Negativação online  
+- Monitoramento de CNPJs e sócios  
+- Cobrança automatizada  
+- Pix Parcelado  
 
-## Funcionalidades  
+O objetivo é **fortalecer a presença digital da Verifik**, transmitir credibilidade e facilitar o acesso de empresas às soluções de análise e recuperação de crédito.  
 
-- **Seções de soluções em cards responsivos**, com descrições detalhadas.  
-- **Formulários de contato integrados**, para captação de leads.  
-- **Botão do WhatsApp fixo e interativo**, com menu que solicita **nome** e **CNPJ** antes do atendimento.  
-- **Botão de retorno ao topo**, melhorando a navegação.  
-- **Rodapé institucional completo**, com informações da empresa, links úteis, localização e redes sociais.  
+---
 
-## Tecnologias utilizadas  
+## ✨ Principais Funcionalidades  
 
-- **HTML5**  
-- **CSS3 (Flexbox e Grid)**  
-- **JavaScript** (para formulários, menu do WhatsApp e interatividade)  
+✔️ **Apresentação das soluções em cards responsivos** – layout moderno e organizado para fácil visualização.  
+✔️ **Formulários de contato integrados** – captura de leads com envio automatizado de informações.  
+✔️ **Atendimento via WhatsApp** – botão fixo com menu interativo que solicita **nome** e **CNPJ** antes do contato.  
+✔️ **Botão de retorno ao topo** – melhora a usabilidade em páginas longas.  
+✔️ **Rodapé institucional completo** – com informações da empresa, links úteis, localização e redes sociais.  
 
-## Como executar o projeto  
+---
+
+## 🛠️ Tecnologias Utilizadas  
+
+- **HTML5** – estrutura semântica e acessível.  
+- **CSS3 (Flexbox e Grid)** – layout responsivo e estilização moderna.  
+- **JavaScript (Vanilla)** – interatividade (formulários, WhatsApp e navegação).  
+
+---
+
+## 🚀 Como Executar o Projeto  
 
 1. Clone este repositório:  
    ```bash
    git clone https://github.com/daltonneres/Verifik---Dalton-Neres.git
-Abra o arquivo index.html em seu navegador preferido.
+2. Abra o arquivo index.html em qualquer navegador moderno.
 
-Contato para dúvidas, sugestões ou parcerias, entre em contato:
+## 🏢 Estrutura das Páginas
+
+index.html → Página inicial com overview das soluções e formulário de contato.
+
+empresa.html → Página institucional com informações sobre a Verifik, missão, visão e valores.
+
+solucoes.html → Página dedicada às soluções oferecidas, organizada em categorias com cards interativos.
+
+## 📬 Contato
+
+Para dúvidas, sugestões ou parcerias:
 
 E-mail: daltonneres1@gmail.com
+LinkedIn: Dalton José Neres
 
-Licença
+## 📄 Licença
+
 Este projeto está licenciado sob a MIT License – consulte o arquivo LICENSE para mais detalhes.
