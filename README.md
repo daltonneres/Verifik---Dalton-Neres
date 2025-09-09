@@ -27,8 +27,7 @@ O design foi desenvolvido de forma **clara, responsiva e objetiva**, priorizando
    git clone https://github.com/daltonneres/Verifik---Dalton-Neres.git
 Abra o arquivo index.html em seu navegador preferido.
 
-Contato
-Para dúvidas, sugestões ou parcerias, entre em contato:
+Contato para dúvidas, sugestões ou parcerias, entre em contato:
 
 E-mail: daltonneres1@gmail.com
 
