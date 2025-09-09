@@ -24,14 +24,13 @@ O design foi desenvolvido de forma **clara, responsiva e objetiva**, priorizando
 
 1. Clone este repositório:  
    ```bash
-   git clone https://github.com/daltonneres/agencia_dalton01.git
+   git clone https://github.com/daltonneres/Verifik---Dalton-Neres.git
 Abra o arquivo index.html em seu navegador preferido.
 
 Contato
 Para dúvidas, sugestões ou parcerias, entre em contato:
 
 E-mail: daltonneres1@gmail.com
-LinkedIn: Dalton José Neres
 
 Licença
 Este projeto está licenciado sob a MIT License – consulte o arquivo LICENSE para mais detalhes.
