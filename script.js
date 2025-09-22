@@ -163,7 +163,7 @@ sendCnpjBtn.addEventListener("click", () => {
       addMessage("📩 Seus dados foram enviados com sucesso!");
     })
     .catch(error => {
-      addMessage("⚠️ Ocorreu um erro ao enviar os dados. Tente novamente.");
+      addMessge("⚠️ Ocorreu um erro ao enviar os dados. Tente novamente.");
     });
 
   // Opções de suporte/comercial com nome e CNPJ
